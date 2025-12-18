@@ -18,4 +18,13 @@ This project is a deep‑learning based web application that detects brain tumor
 
 ## How to Run Locally
 
+git clone https://github.com/Garimasingh10/tumor-prediction.git
+cd tumor-prediction
+
+python -m venv myenv
+myenv\Scripts\activate # on Windows
+
+pip install -r requirements.txt
+python app.py
+
 
