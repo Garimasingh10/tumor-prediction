@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Brain Tumor Detection</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- Left: Info / Branding -->
+        <section class="info-panel">
+            <div class="logo-title">
+                <div class="logo-circle">
+                    🧠
+                </div>
+                <div>
+                    <h1>Brain Tumor Detection</h1>
+                    <p class="subtitle">AI‑powered MRI analysis using deep learning.</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h2>How it works</h2>
+                <ul>
+                    <li>Upload an MRI brain scan image (JPG/PNG).</li>
+                    <li>The image is resized and normalized for the CNN model.</li>
+                    <li>The model predicts the tumor type with confidence.</li>
+                    <li>Results are shown instantly on the right panel.</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h2>Model details</h2>
+                <p>
+                    A Convolutional Neural Network (CNN) trained on MRI images 
+                    classifies scans into four categories: <strong>Glioma</strong>, 
+                    <strong>Meningioma</strong>, <strong>No Tumor</strong>, and 
+                    <strong>Pituitary</strong>.
+                </p>
+            </div>
+
+            <footer>
+                <p class="footer-text">
+                    Note: This is an academic project and not a medical device.
+                </p>
+            </footer>
+        </section>
+
+        <!-- Right: Interaction / Prediction -->
+        <section class="form-panel">
+            <div class="card">
+                <h2>Upload MRI scan</h2>
+                <p class="helper-text">
+                    Choose a brain MRI image from your system and click <strong>Predict</strong>.
+                </p>
+
+                <form method="POST" enctype="multipart/form-data" class="upload-form">
+                    <label class="file-input-label">
+                        <span>Select image</span>
+                        <input type="file" name="image" accept="image/*" required>
+                    </label>
+
+                    <button type="submit" class="primary-btn">Predict</button>
+                </form>
+
+                {% if prediction %}
+                    <div class="result-card">
+                        <h3>Prediction result</h3>
+                        <p class="result-label">Tumor type</p>
+                        <p class="result-value">{{ prediction }}</p>
+
+                        <p class="result-label">Model confidence</p>
+                        <p class="result-confidence">{{ confidence }}%</p>
+
+                        <p class="result-note">
+                            Confidence represents the model’s probability for the predicted class.
+                        </p>
+                    </div>
+                {% else %}
+                    <div class="placeholder-card">
+                        <p>No prediction yet.</p>
+                        <p>Upload an MRI image to see the result here.</p>
+                    </div>
+                {% endif %}
+            </div>
+        </section>
+    </div>
+</body>
+</html>

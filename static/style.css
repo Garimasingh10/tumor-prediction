@@ -1,0 +1,233 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #0f172a;
+    min-height: 100vh;
+}
+
+/* Layout wrapper */
+.app-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Left panel: info */
+.info-panel {
+    flex: 1.2;
+    padding: 40px 50px;
+    color: #e5e7eb;
+    background: radial-gradient(circle at top left, #38bdf8 0, #0f172a 50%);
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.logo-circle {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+}
+
+.info-panel h1 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #cbd5f5;
+}
+
+.info-box {
+    margin-top: 24px;
+    background: rgba(15, 23, 42, 0.6);
+    padding: 18px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.info-box h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.info-box ul {
+    list-style: disc;
+    margin-left: 18px;
+    font-size: 14px;
+    color: #e5e7eb;
+}
+
+.info-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #e5e7eb;
+}
+
+footer {
+    margin-top: 30px;
+}
+
+.footer-text {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* Right panel: form + result */
+.form-panel {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 30px;
+}
+
+.card {
+    width: 100%;
+    max-width: 480px;
+    background: #f9fafb;
+    padding: 28px 26px 30px;
+    border-radius: 18px;
+    box-shadow: 0 20px 35px rgba(15, 23, 42, 0.3);
+}
+
+.card h2 {
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+
+.helper-text {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 18px;
+}
+
+/* Upload form */
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.file-input-label {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: #ffffff;
+    border-radius: 999px;
+    border: 1px solid #d1d5db;
+    font-size: 13px;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.file-input-label:hover {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.file-input-label input[type="file"] {
+    position: absolute;
+    opacity: 0;
+    inset: 0;
+    cursor: pointer;
+}
+
+.primary-btn {
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: none;
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    align-self: flex-start;
+    box-shadow: 0 8px 15px rgba(79, 70, 229, 0.35);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.primary-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 20px rgba(79, 70, 229, 0.4);
+}
+
+/* Result section */
+.result-card, .placeholder-card {
+    margin-top: 18px;
+    padding: 16px 16px 14px;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+}
+
+.placeholder-card p {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.result-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.result-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #9ca3af;
+    margin-top: 4px;
+}
+
+.result-value {
+    font-size: 20px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.result-confidence {
+    font-size: 18px;
+    font-weight: 500;
+    color: #16a34a;
+}
+
+.result-note {
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 8px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .app-wrapper {
+        flex-direction: column;
+    }
+
+    .info-panel {
+        padding: 24px 18px;
+    }
+
+    .form-panel {
+        padding: 24px 18px 30px;
+    }
+}
